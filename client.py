@@ -18,7 +18,7 @@ def load_leaderboard():
 
 def save_leaderboard(leaderboard):
     with open(DATA_FILE, 'w') as file:
-        json.dump(leaderboard, file)
+        json.dump(leaderboard, file, indent=4)
 
 # Initialize leaderboard
 leaderboard = load_leaderboard()
@@ -26,7 +26,6 @@ leaderboard = load_leaderboard()
 # Handle client connections
 def handle_client(client_socket):
     client_name = None
-    difficulty = 50
     client_socket.sendall(b'Welcome to the Guessing Game!\n')
     
     while True:
